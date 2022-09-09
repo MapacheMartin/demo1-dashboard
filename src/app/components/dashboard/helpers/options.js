@@ -9,7 +9,7 @@ export const options = {
   outerMarginBottom: null,
   outerMarginLeft: null,
   useTransformPositioning: true,
-  mobileBreakpoint: 910,
+  mobileBreakpoint: 1024,
   minCols: 2,
   maxCols: 6,
   minRows: 1,

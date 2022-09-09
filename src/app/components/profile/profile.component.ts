@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   isLoading = false;
-  imageSrc: any = '/assets/images/melr.jpg';
-  constructor() {}
+  imageSrc: any = '';
+  constructor(private _user: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._user.getProfile().subscribe((pic) => (this.imageSrc = pic));
+  }
 
   async handleFileInput(files: any) {
     this.isLoading = true;
@@ -20,7 +23,7 @@ export class ProfileComponent implements OnInit {
         const file = files.target.files[0];
 
         const reader = new FileReader();
-        reader.onload = (e) => (this.imageSrc = reader.result);
+        reader.onload = (e) => (this._user.setProfile(reader.result));
 
         reader.readAsDataURL(file);
         setTimeout(() => {

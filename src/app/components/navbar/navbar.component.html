@@ -1,37 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand d-block d-lg-none" [routerLink]="['/dashboard']"
-    ><img height="30px" src="assets/images/logo_orange.png" alt=""
-  /></a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
+  <div
+    [ngClass]="{
+      'justify-content-between': width <= 1478,
+      'justify-content-end': width > 1478
+    }"
+    class="d-flex w-100"
   >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-block d-lg-none">
-      <li class="nav-item active">
-        <a
-          class="nav-link"
-          [routerLink]="['/dashboard']"
-          routerLinkActive="router-link-active"
-          >Dashboard
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/about-us']"
-          routerLinkActive="router-link-active"
-          >About
-        </a>
-      </li>
-    </ul>
+    <img
+      *ngIf="width <= 1478"
+      class="logo"
+      src="assets/images/logo_orange.png"
+      alt="logo"
+    />
+    <div class="d-flex">
+      <div
+        *ngIf="width <= 1478"
+        class="h-100 mr-2 sidebar-opener d-flex align-items-center"
+        (click)="clickOpenNav()"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="user-profile">
+        <img [src]="imageSrc" alt="user image" />
+      </div>
+    </div>
   </div>
 </nav>

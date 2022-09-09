@@ -11,6 +11,7 @@ import * as moment from 'moment';
 export class DashboardComponent implements OnInit {
   constructor(private changeDetectorRefs: ChangeDetectorRef) {}
   options: GridsterConfig;
+
   user: any = {};
   dashboard: Array<GridsterItem>;
   countNotifications: any;
