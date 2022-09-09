@@ -1,0 +1,41 @@
+<div class="w-100 pl-3 pr-3 dash-container">
+  <div class="grid-container">
+    <gridster
+      style="background-color: transparent !important"
+      [options]="options"
+    >
+      <div *ngFor="let item of dashboard">
+        <gridster-item
+          style="border-radius: 20px !important"
+          [item]="item"
+          [class]="item.class"
+          class="p-3"
+        >
+          <div *ngIf="item.type == 'welcome'" class="h-100 w-100 d-flex align-items-center">
+            <div class="welcome" >
+              <label class="welcome-lbl">Bienvenido usuario</label>
+              <br /><label style="text-transform: capitalize" class="date"
+                >Hoy es {{ item.currentTime }},</label
+              >
+              <br /><label class="date">Tienes 0 Notificaciones</label>
+            </div>
+          </div>
+
+          <app-profile *ngIf="item.type == 'profile'"></app-profile>
+        </gridster-item>
+      </div>
+    </gridster>
+  </div>
+
+  <div class="toolbar">
+    <button *ngIf="!isEditing" (click)="edit()" class="btn btn-primary">
+      <i class="fas fa-edit"></i>
+    </button>
+    <button *ngIf="isEditing" (click)="save()" class="btn btn-success">
+      <i class="fas fa-save"></i>
+    </button>
+    <button *ngIf="isEditing" (click)="reset()" class="btn btn-warning mt-3">
+      <i class="fas fa-redo"></i>
+    </button>
+  </div>
+</div>

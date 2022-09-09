@@ -1,1 +1,208 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$demo1-primary: mat.define-palette(mat.$indigo-palette);
+$demo1-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$demo1-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$demo1-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $demo1-primary,
+      accent: $demo1-accent,
+      warn: $demo1-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($demo1-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Bold.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Black.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-ExtraBold.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-BlackItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-BoldItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-ExtraLight.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-ExtraLightItalic.woff2")
+      format("woff2"),
+    url("assets/fonts/poppins/Poppins-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Italic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-ExtraBoldItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Medium.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Light.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-LightItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Regular.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-MediumItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-SemiBold.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-SemiBoldItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-ThinItalic.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins/Poppins-Thin.woff2") format("woff2"),
+    url("assets/fonts/poppins/Poppins-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: poppins;
+}

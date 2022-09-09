@@ -1,0 +1,52 @@
+.side-nav {
+  font-family: poppins;
+
+  .logo-text {
+    font-weight: 700;
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #505050;
+  }
+
+  .btn-arrow {
+    padding: 2px;
+    background: transparent;
+    border-color: transparent;
+    color: gray;
+    margin-top: 11px;
+  }
+
+  .action {
+    cursor: pointer;
+    color: #183153;
+    transition: all ease-in-out 0.2s;
+    &:hover{
+      color: #0275D8;
+    }
+    .text {
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+    .icon {
+      font-size: 16px;
+    }
+  }
+  .router-link-active{
+    color: #0275D8;
+    border-bottom: 3px solid #0275D8;
+  }
+}
+.sidenavfull mat-sidenav {
+  width: 250px;
+}
+
+.sidenavnormal mat-sidenav {
+  width: 80px;
+  // transition: all ease-in-out 0.2s;
+}
+
+// mat-sidenav {
+//   transition: all ease-in-out 0.2s;
+// }
