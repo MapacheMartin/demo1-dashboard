@@ -15,11 +15,20 @@ export const dashboard_general = [
     resizeEnabled: false,
   },
   {
-    cols: 2,
+    cols: 1,
     rows: 2,
     y: 0,
     x: 4,
     type: "profile",
+    minItemRows: 2,
+  },
+  {
+    cols: 1,
+    rows: 2,
+    y: 0,
+    x: 5,
+    type: "weather",
+    padding: false,
     minItemRows: 2,
   },
   {

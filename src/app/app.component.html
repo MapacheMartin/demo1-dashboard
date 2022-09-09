@@ -5,7 +5,10 @@
 >
   <mat-sidenav #sidenav mode="side" opened>
     <div class="p-2 h-100 w-100">
-      <div [ngClass]="{'justify-content-center': !opened}" class="d-flex align-items-center">
+      <div
+        [ngClass]="{ 'justify-content-center': !opened }"
+        class="d-flex align-items-center"
+      >
         <img
           (click)="opened = !opened; openClick()"
           width="50px"
@@ -23,11 +26,21 @@
         </button>
       </div>
       <div class="actions mt-5">
-        <div [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  [ngClass]="{'justify-content-center': !opened}" class="d-flex action align-items-center pb-2">
+        <div
+          [routerLink]="['/dashboard']"
+          routerLinkActive="router-link-active"
+          [ngClass]="{ 'justify-content-center': !opened }"
+          class="d-flex action align-items-center pb-2"
+        >
           <i class="fa-solid fa-cube icon"></i>
           <div *ngIf="opened" class="ml-1 text">Dasboard</div>
         </div>
-        <div [ngClass]="{'justify-content-center': !opened}" class="d-flex action align-items-center mt-3 pb-2">
+        <div
+          [ngClass]="{ 'justify-content-center': !opened }"
+          [routerLink]="['/about-us']"
+          routerLinkActive="router-link-active"
+          class="d-flex action align-items-center mt-3 pb-2"
+        >
           <i class="fa-solid fa-address-card icon"></i>
           <div *ngIf="opened" class="ml-1 text">About Us</div>
         </div>

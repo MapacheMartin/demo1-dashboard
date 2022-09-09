@@ -1,0 +1,45 @@
+<div
+  class="d-flex align-items-center justify-content-center h-100 w-100 weather"
+>
+  <div
+    class="h-100 w-100 denied p-3 d-flex align-items-center justify-content-center"
+    *ngIf="userDeniedLocation"
+  >
+    <div>
+      <div class="text-center">
+        <h2 class="mb-1"><b>CLIMA</b></h2>
+      </div>
+      <div style="font-weight: 500" class="text-center">
+        Necesitamos de tu ubicación para ofrecerte una mejor experiencia
+      </div>
+      <div class="mt-3 text-center">
+        <a
+          href="https://support.google.com/chrome/answer/142065?hl=es"
+          target="_blank"
+          class="btn btn-sm btn-primary"
+          >Aprende a activarla <br />
+          aqui</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center" *ngIf="!userDeniedLocation">
+    <div *ngIf="loading" class="loading">
+      <i class="fas fa-circle-notch fa-spin"></i>
+    </div>
+
+    <svg *ngIf="loaded" style="width: 90px; height: 90px">
+      <image
+        width="90px"
+        height="90px"
+        [attr.xlink:href]="currentWeather.image"
+        alt="weather-icon"
+      />
+    </svg>
+
+    <div *ngIf="loaded" class="text-center mt-4 temperature">
+      <b> {{ currentWeather.temperature }} °C</b>
+    </div>
+  </div>
+</div>

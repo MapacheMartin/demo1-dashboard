@@ -10,18 +10,31 @@
           [item]="item"
           [class]="item.class"
           class="p-3"
+          [ngClass]="{
+            'p-3': item.padding == true || item.padding == undefined
+          }"
         >
-          <div *ngIf="item.type == 'welcome'" class="h-100 w-100 d-flex align-items-center">
-            <div class="welcome" >
+          <div
+            *ngIf="item.type == 'welcome'"
+            class="h-100 w-100 d-flex align-items-center"
+          >
+            <div class="welcome">
               <label class="welcome-lbl">Bienvenido usuario</label>
               <br /><label style="text-transform: capitalize" class="date"
-                >Hoy es {{ item.currentTime }},</label
+                >Hoy es {{ item.currentTime }}</label
               >
               <br /><label class="date">Tienes 0 Notificaciones</label>
             </div>
           </div>
 
-          <app-profile *ngIf="item.type == 'profile'"></app-profile>
+          <app-profile
+            [ngClass]="{ 'pointer-none': isEditing }"
+            *ngIf="item.type == 'profile'"
+          ></app-profile>
+          <app-weather
+            [ngClass]="{ 'pointer-none': isEditing }"
+            *ngIf="item.type == 'weather'"
+          ></app-weather>
         </gridster-item>
       </div>
     </gridster>

@@ -32,7 +32,16 @@ export class DashboardComponent implements OnInit {
       itemResizeCallback: DashboardComponent.itemResize,
     };
 
-    this.dashboard = JSON.parse(JSON.stringify(dashboard_general));
+    if (localStorage.getItem('dash')) {
+      try {
+        var dashLocal = JSON.parse(localStorage.getItem('dash'));
+        this.dashboard = JSON.parse(JSON.stringify(dashLocal));
+      } catch (e) {
+        this.dashboard = JSON.parse(JSON.stringify(dashboard_general));
+      }
+    } else {
+      this.dashboard = JSON.parse(JSON.stringify(dashboard_general));
+    }
   }
 
   edit() {
@@ -76,6 +85,6 @@ export class DashboardComponent implements OnInit {
       },
     };
 
-    this.changeDetectorRefs.detectChanges();
+    // this.changeDetectorRefs.detectChanges();
   }
 }

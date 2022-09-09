@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  weatherApi:"https://api.open-meteo.com/v1"
 };

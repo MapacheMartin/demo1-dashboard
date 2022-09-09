@@ -1,8 +1,12 @@
 .dash-container {
   background-color: #eceef7;
   .grid-container {
-    height: calc(100vh - 59px);
+    height: calc(100vh - 52px);
   }
+}
+
+.pointer-none{
+  pointer-events: none !important;
 }
 
 .bg-blue {

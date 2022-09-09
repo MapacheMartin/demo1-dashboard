@@ -9,7 +9,9 @@ import { GridsterModule } from 'angular-gridster2';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { WeatherComponent } from './components/weather/weather.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,16 +19,18 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     DashboardComponent,
     AboutComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     GridsterModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

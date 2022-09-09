@@ -1,3 +1,32 @@
-<div class="h-100 w-100 d-flex align-items-center justify-content-center">
-  <img src="/assets/images/melr.jpg" alt="" />
+<div
+  id="image-container"
+  class="h-100 w-100 d-flex align-items-center justify-content-center"
+>
+  <div>
+    <input
+      type="file"
+      id="fileInput"
+      class="fileInput"
+      (change)="handleFileInput($event)"
+      accept="image/jpeg, image/png"
+    />
+    <div class="position-relative profileContainer">
+      <div
+        (click)="clickInput()"
+        [ngClass]="{ 'op-all': isLoading }"
+        class="profile-inputSelect"
+      >
+        <i *ngIf="!isLoading" class="fa-regular fa-pen-to-square"></i>
+        <i *ngIf="isLoading" class="fas fa-circle-notch fa-spin"></i>
+      </div>
+      <img
+        *ngIf="!isLoading"
+        [src]="imageSrc"
+        class="profile-image"
+        alt="profile image"
+      />
+    </div>
+    <div class="text-center mt-3 name">Martin Lugo</div>
+    <div class="text-center mt-1 desc">Frontend Dev</div>
+  </div>
 </div>

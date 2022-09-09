@@ -1,6 +1,6 @@
 .side-nav {
   font-family: poppins;
-
+  height: 100vh;
   .logo-text {
     font-weight: 700;
     font-size: 30px;
@@ -21,8 +21,8 @@
     cursor: pointer;
     color: #183153;
     transition: all ease-in-out 0.2s;
-    &:hover{
-      color: #0275D8;
+    &:hover {
+      color: #0275d8;
     }
     .text {
       font-size: 15px;
@@ -33,9 +33,9 @@
       font-size: 16px;
     }
   }
-  .router-link-active{
-    color: #0275D8;
-    border-bottom: 3px solid #0275D8;
+  .router-link-active {
+    color: #0275d8;
+    border-bottom: 3px solid #0275d8;
   }
 }
 .sidenavfull mat-sidenav {
