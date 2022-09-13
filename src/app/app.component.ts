@@ -24,6 +24,7 @@ export class AppComponent {
     if (window.innerWidth <= 1478) {
       this.mode = 'over';
       this.opened = true;
+      this.isOpened = false;
     } else {
       this.mode = 'side';
       this.isOpened = true;

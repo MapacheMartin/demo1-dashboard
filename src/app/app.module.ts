@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { WeatherComponent } from './components/weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsComponent } from './components/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     ProfileComponent,
     WeatherComponent,
+    ChartsComponent,
   ],
   imports: [
     BrowserModule,

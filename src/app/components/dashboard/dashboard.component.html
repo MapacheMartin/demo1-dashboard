@@ -35,6 +35,10 @@
             [ngClass]="{ 'pointer-none': isEditing }"
             *ngIf="item.type == 'weather'"
           ></app-weather>
+          <app-charts
+            [ngClass]="{ 'pointer-none': isEditing }"
+            *ngIf="item.type == 'charts'"
+          ></app-charts>
         </gridster-item>
       </div>
     </gridster>

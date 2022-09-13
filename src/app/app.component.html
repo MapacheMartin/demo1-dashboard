@@ -3,7 +3,7 @@
   autosize
   class="side-nav"
 >
-  <mat-sidenav #sidenav [(opened)]="isOpened" [mode]="mode" >
+  <mat-sidenav [autoFocus]="false" #sidenav [(opened)]="isOpened" [mode]="mode" >
     <div class="p-2 h-100 w-100">
       <div
         [ngClass]="{ 'justify-content-center': !opened }"

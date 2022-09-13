@@ -38,7 +38,6 @@ export const dashboard_general = [
     x: 4,
     type: "ventas",
     minItemCols: 2,
-    show: "ventas",
   },
 
   {
@@ -46,10 +45,9 @@ export const dashboard_general = [
     rows: 2,
     y: 1,
     x: 0,
-    type: "achievements",
+    type: "charts",
     minItemRows: 2,
     minItemCols: 3,
-    show: "ventas",
   },
 
   {
