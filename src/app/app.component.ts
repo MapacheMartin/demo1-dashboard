@@ -36,7 +36,17 @@ export class AppComponent {
       this.detectChange.detectChanges();
       setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
-      }, 100);
+      }, 50);
+    }
+  }
+
+  closeNav() {
+    if (window.innerWidth < 1478) {
+      this.isOpened = false;
+      this.detectChange.detectChanges();
+      setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+      }, 50);
     }
   }
 

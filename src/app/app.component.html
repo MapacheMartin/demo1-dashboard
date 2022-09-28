@@ -3,7 +3,13 @@
   autosize
   class="side-nav"
 >
-  <mat-sidenav [autoFocus]="false" #sidenav [(opened)]="isOpened" [mode]="mode" >
+  <mat-sidenav
+    [disableClose]="width >= 1478 ? true : false"
+    [autoFocus]="false"
+    #sidenav
+    [(opened)]="isOpened"
+    [mode]="mode"
+  >
     <div class="p-2 h-100 w-100">
       <div
         [ngClass]="{ 'justify-content-center': !opened }"
@@ -28,6 +34,7 @@
       <div class="actions mt-5">
         <div
           [routerLink]="['/dashboard']"
+          (click)="closeNav()"
           routerLinkActive="router-link-active"
           [ngClass]="{ 'justify-content-center': !opened }"
           class="d-flex action align-items-center pb-2"
@@ -37,6 +44,7 @@
         </div>
         <div
           [ngClass]="{ 'justify-content-center': !opened }"
+          (click)="closeNav()"
           [routerLink]="['/about-us']"
           routerLinkActive="router-link-active"
           class="d-flex action align-items-center mt-3 pb-2"
@@ -47,8 +55,8 @@
       </div>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <app-navbar (openNav)="openFromNav($event)" ></app-navbar>
+  <mat-sidenav-content class="side-content">
+    <app-navbar (openNav)="openFromNav($event)"></app-navbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
